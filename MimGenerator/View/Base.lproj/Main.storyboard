@@ -59,14 +59,65 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="MimGenerator" id="aRu-cc-rvO"/>
+                    <navigationItem key="navigationItem" title="MimGenerator" id="aRu-cc-rvO">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="2B9-3n-Kmn"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="imageList" destination="Vgp-TH-5AS" id="kJm-O4-hOx"/>
+                        <segue destination="Ov0-E4-wCL" kind="show" identifier="toDetails" id="pFl-u6-aoH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1050.7246376811595" y="138.61607142857142"/>
+        </scene>
+        <!--MimGenerator-->
+        <scene sceneID="PYy-eq-zej">
+            <objects>
+                <viewController id="Ov0-E4-wCL" customClass="DetailsVC" customModule="MimGenerator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2JG-eq-rX4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RBL-JP-Pu8">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4sQ-xa-tat">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem title="Add Logo" id="dyJ-s6-V8f">
+                                        <connections>
+                                            <action selector="btnAddLogoTappde:" destination="Ov0-E4-wCL" id="SB6-9A-DoS"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Add Text" id="tQU-h2-D8a">
+                                        <connections>
+                                            <action selector="btnAddTextTapped:" destination="Ov0-E4-wCL" id="pvs-8Q-lCP"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="r3U-yW-2nb" firstAttribute="trailing" secondItem="RBL-JP-Pu8" secondAttribute="trailing" id="0cr-Ky-bc5"/>
+                            <constraint firstItem="4sQ-xa-tat" firstAttribute="leading" secondItem="r3U-yW-2nb" secondAttribute="leading" id="46z-HX-jkq"/>
+                            <constraint firstItem="RBL-JP-Pu8" firstAttribute="leading" secondItem="r3U-yW-2nb" secondAttribute="leading" id="5Im-7V-xTk"/>
+                            <constraint firstItem="RBL-JP-Pu8" firstAttribute="top" secondItem="r3U-yW-2nb" secondAttribute="top" id="9y8-q5-gtA"/>
+                            <constraint firstItem="4sQ-xa-tat" firstAttribute="bottom" secondItem="r3U-yW-2nb" secondAttribute="bottom" id="Opq-KA-ArE"/>
+                            <constraint firstItem="4sQ-xa-tat" firstAttribute="trailing" secondItem="r3U-yW-2nb" secondAttribute="trailing" id="Zbm-rG-RPh"/>
+                            <constraint firstItem="4sQ-xa-tat" firstAttribute="top" secondItem="RBL-JP-Pu8" secondAttribute="bottom" id="m4h-ou-Ugf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="r3U-yW-2nb"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="MimGenerator" id="Yta-18-Jb3"/>
+                    <connections>
+                        <outlet property="imgMeme" destination="RBL-JP-Pu8" id="n2k-MX-LU1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Cn-M3-Zze" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1860.8695652173915" y="138.61607142857142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GgF-Tv-sii">

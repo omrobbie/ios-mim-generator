@@ -22,6 +22,16 @@ class HomeVC: UIViewController {
         loadData()
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetails" {
+            if let detailsVC = segue.destination as? DetailsVC {
+                if let urlString = sender as? String {
+                    detailsVC.urlString = urlString
+                }
+            }
+        }
+    }
+
     private func setupList() {
         imageListRefreshControl = UIRefreshControl()
         imageListRefreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh ↓")
@@ -49,6 +59,12 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return .zero
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let item = data[indexPath.row]
+        let urlString = item.url
+        performSegue(withIdentifier: "toDetails", sender: urlString)
     }
 }
 

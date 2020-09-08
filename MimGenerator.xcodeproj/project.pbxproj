@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,7 @@
 		FC348B5E2507415000039E2E /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC348B5D2507415000039E2E /* Meme.swift */; };
 		FC348B61250742A700039E2E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC348B60250742A700039E2E /* NetworkManager.swift */; };
 		FC348B632507458000039E2E /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC348B622507458000039E2E /* ImageCell.swift */; };
+		FC348B6525074A5700039E2E /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC348B6425074A5700039E2E /* DetailsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		FC348B5D2507415000039E2E /* Meme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 		FC348B60250742A700039E2E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FC348B622507458000039E2E /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		FC348B6425074A5700039E2E /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +56,6 @@
 				92DE38F636BCD5500869ED3A /* Pods-MimGenerator.debug.xcconfig */,
 				B501145ED084BA034F43C99A /* Pods-MimGenerator.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -121,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				FC348B492507369D00039E2E /* HomeVC.swift */,
+				FC348B6425074A5700039E2E /* DetailsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -260,6 +262,7 @@
 				FC348B5E2507415000039E2E /* Meme.swift in Sources */,
 				FC348B61250742A700039E2E /* NetworkManager.swift in Sources */,
 				FC348B462507369D00039E2E /* AppDelegate.swift in Sources */,
+				FC348B6525074A5700039E2E /* DetailsVC.swift in Sources */,
 				FC348B482507369D00039E2E /* SceneDelegate.swift in Sources */,
 				FC348B632507458000039E2E /* ImageCell.swift in Sources */,
 			);
