@@ -28,7 +28,7 @@ class HomeVC: UIViewController {
     }
 
     @objc private func loadData() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        NetworkManager.shared.fetchMemeList { (data) in
             self.imageListRefreshControl.endRefreshing()
         }
     }
