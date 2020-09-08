@@ -14,6 +14,8 @@ class HomeVC: UIViewController {
 
     private var imageListRefreshControl: UIRefreshControl!
 
+    private var data: [MemeItem] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupList()
@@ -28,8 +30,11 @@ class HomeVC: UIViewController {
     }
 
     @objc private func loadData() {
+        imageListRefreshControl.beginRefreshing()
         NetworkManager.shared.fetchMemeList { (data) in
+            self.data = data
             self.imageListRefreshControl.endRefreshing()
+            self.imageList.reloadData()
         }
     }
 }
@@ -50,7 +55,7 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 // MARK: - Handle imageList data
 extension HomeVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        return data.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
