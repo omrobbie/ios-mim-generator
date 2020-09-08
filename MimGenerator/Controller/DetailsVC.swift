@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import Photos
 
 class DetailsVC: UIViewController {
 
@@ -26,6 +27,28 @@ class DetailsVC: UIViewController {
         guard let url = URL(string: urlString) else {return}
         imgMeme.kf.indicatorType = .activity
         imgMeme.kf.setImage(with: url, placeholder: UIImage(systemName: "photo.on.rectangle.angled"))
+    }
+
+    private func saveToGallery() {
+        imgMeme.addSubview(imgLogo)
+        imgMeme.addSubview(lblText)
+        UIGraphicsBeginImageContextWithOptions(imgMeme.bounds.size, false, 0)
+        imgMeme.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()!
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(saveImage(_:didFinishSavingWithError:contextInfo:)), nil)
+        UIGraphicsEndImageContext()
+    }
+
+    @objc private func saveImage(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafeRawPointer) {
+        if let error = error {
+            let ac = UIAlertController(title: "Save error", message: error.localizedDescription, preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        } else {
+            let ac = UIAlertController(title: "Saved!", message: "Your altered image has been saved to your photos.", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        }
     }
 
     @IBAction func btnAddLogoTappde(_ sender: Any) {
@@ -60,7 +83,7 @@ class DetailsVC: UIViewController {
 
         let actionCancel = UIAlertAction(title: "Cancel", style: .cancel)
         let actionSave = UIAlertAction(title: "Save", style: .default) { (_) in
-
+            self.saveToGallery()
         }
 
         alertVC.addAction(actionCancel)
