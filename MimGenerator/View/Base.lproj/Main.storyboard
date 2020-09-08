@@ -108,6 +108,12 @@
                                             <action selector="btnAddTextTapped:" destination="Ov0-E4-wCL" id="pvs-8Q-lCP"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="AM6-PY-WBF"/>
+                                    <barButtonItem systemItem="save" id="2oZ-jI-BEW">
+                                        <connections>
+                                            <action selector="btnSaveTapped:" destination="Ov0-E4-wCL" id="7Eb-Ai-P0J"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>

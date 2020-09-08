@@ -54,6 +54,20 @@ class DetailsVC: UIViewController {
 
         present(alertVC, animated: true)
     }
+
+    @IBAction func btnSaveTapped(_ sender: Any) {
+        let alertVC = UIAlertController(title: "Save this meme?", message: nil, preferredStyle: .alert)
+
+        let actionCancel = UIAlertAction(title: "Cancel", style: .cancel)
+        let actionSave = UIAlertAction(title: "Save", style: .default) { (_) in
+
+        }
+
+        alertVC.addAction(actionCancel)
+        alertVC.addAction(actionSave)
+
+        present(alertVC, animated: true)
+    }
 }
 
 extension DetailsVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
