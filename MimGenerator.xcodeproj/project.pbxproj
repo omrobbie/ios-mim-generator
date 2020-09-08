@@ -15,6 +15,7 @@
 		FC348B522507369F00039E2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC348B502507369F00039E2E /* LaunchScreen.storyboard */; };
 		FC348B5E2507415000039E2E /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC348B5D2507415000039E2E /* Meme.swift */; };
 		FC348B61250742A700039E2E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC348B60250742A700039E2E /* NetworkManager.swift */; };
+		FC348B632507458000039E2E /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC348B622507458000039E2E /* ImageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		FC348B532507369F00039E2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC348B5D2507415000039E2E /* Meme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 		FC348B60250742A700039E2E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		FC348B622507458000039E2E /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				FC348B4B2507369D00039E2E /* Main.storyboard */,
+				FC348B622507458000039E2E /* ImageCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				FC348B61250742A700039E2E /* NetworkManager.swift in Sources */,
 				FC348B462507369D00039E2E /* AppDelegate.swift in Sources */,
 				FC348B482507369D00039E2E /* SceneDelegate.swift in Sources */,
+				FC348B632507458000039E2E /* ImageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
