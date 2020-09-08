@@ -12,6 +12,7 @@ import Kingfisher
 class DetailsVC: UIViewController {
 
     @IBOutlet weak var imgMeme: UIImageView!
+    @IBOutlet weak var lblText: UILabel!
 
     var urlString: String!
 
@@ -30,5 +31,22 @@ class DetailsVC: UIViewController {
     }
 
     @IBAction func btnAddTextTapped(_ sender: Any) {
+        let alertVC = UIAlertController(title: "Add Text", message: nil, preferredStyle: .alert)
+
+        let actionCancel = UIAlertAction(title: "Cancel", style: .cancel)
+        let actionAdd = UIAlertAction(title: "Add", style: .default) { (_) in
+            if let text = alertVC.textFields?[0].text {
+                self.lblText.text = text
+            }
+        }
+
+        alertVC.addTextField { (textfield) in
+            textfield.placeholder = "add this text to the meme..."
+        }
+
+        alertVC.addAction(actionCancel)
+        alertVC.addAction(actionAdd)
+
+        present(alertVC, animated: true)
     }
 }
