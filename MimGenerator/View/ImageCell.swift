@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ImageCell: UICollectionViewCell {
     
     @IBOutlet weak var imgMeme: UIImageView!
 
     func parseData(item: MemeItem) {
-        // maybe use kingfisher to speed the development
-        imgMeme.image = UIImage(systemName: "rays")
+        guard let url = URL(string: item.url) else {return}
+        imgMeme.kf.indicatorType = .activity
+        imgMeme.kf.setImage(with: url, placeholder: UIImage(systemName: "photo.on.rectangle.angled"))
     }
 }
