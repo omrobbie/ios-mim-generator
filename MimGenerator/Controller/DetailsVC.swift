@@ -12,6 +12,7 @@ import Kingfisher
 class DetailsVC: UIViewController {
 
     @IBOutlet weak var imgMeme: UIImageView!
+    @IBOutlet weak var imgLogo: UIImageView!
     @IBOutlet weak var lblText: UILabel!
 
     var urlString: String!
@@ -28,6 +29,10 @@ class DetailsVC: UIViewController {
     }
 
     @IBAction func btnAddLogoTappde(_ sender: Any) {
+        let imagePickerVC = UIImagePickerController()
+        imagePickerVC.delegate = self
+        imagePickerVC.allowsEditing = true
+        present(imagePickerVC, animated: true)
     }
 
     @IBAction func btnAddTextTapped(_ sender: Any) {
@@ -48,5 +53,14 @@ class DetailsVC: UIViewController {
         alertVC.addAction(actionAdd)
 
         present(alertVC, animated: true)
+    }
+}
+
+extension DetailsVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[.editedImage] as? UIImage else {return}
+        dismiss(animated: true)
+        imgLogo.image = image
     }
 }
