@@ -12,8 +12,25 @@ class HomeVC: UIViewController {
 
     @IBOutlet weak var imageList: UICollectionView!
 
+    private var imageListRefreshControl: UIRefreshControl!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupList()
+        loadData()
+    }
+
+    private func setupList() {
+        imageListRefreshControl = UIRefreshControl()
+        imageListRefreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh ↓")
+        imageListRefreshControl.addTarget(self, action: #selector(loadData), for: .valueChanged)
+        imageList.addSubview(imageListRefreshControl)
+    }
+
+    @objc private func loadData() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.imageListRefreshControl.endRefreshing()
+        }
     }
 }
 
