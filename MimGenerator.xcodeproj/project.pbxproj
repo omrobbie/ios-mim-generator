@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2BE0FFBCEF3317D2D72D2080 /* Pods_MimGenerator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A1F4BEFB5E32D2A0F825833 /* Pods_MimGenerator.framework */; };
 		FC348B462507369D00039E2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC348B452507369D00039E2E /* AppDelegate.swift */; };
 		FC348B482507369D00039E2E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC348B472507369D00039E2E /* SceneDelegate.swift */; };
 		FC348B4A2507369D00039E2E /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC348B492507369D00039E2E /* HomeVC.swift */; };
@@ -19,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A1F4BEFB5E32D2A0F825833 /* Pods_MimGenerator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MimGenerator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		92DE38F636BCD5500869ED3A /* Pods-MimGenerator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MimGenerator.debug.xcconfig"; path = "Target Support Files/Pods-MimGenerator/Pods-MimGenerator.debug.xcconfig"; sourceTree = "<group>"; };
+		B501145ED084BA034F43C99A /* Pods-MimGenerator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MimGenerator.release.xcconfig"; path = "Target Support Files/Pods-MimGenerator/Pods-MimGenerator.release.xcconfig"; sourceTree = "<group>"; };
 		FC348B422507369D00039E2E /* MimGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MimGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC348B452507369D00039E2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC348B472507369D00039E2E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,17 +41,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BE0FFBCEF3317D2D72D2080 /* Pods_MimGenerator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		549C1E29C31E3C9AD36CA352 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				92DE38F636BCD5500869ED3A /* Pods-MimGenerator.debug.xcconfig */,
+				B501145ED084BA034F43C99A /* Pods-MimGenerator.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7E311DDB2D8CC0057C418B4E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5A1F4BEFB5E32D2A0F825833 /* Pods_MimGenerator.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FC348B392507369D00039E2E = {
 			isa = PBXGroup;
 			children = (
 				FC348B442507369D00039E2E /* MimGenerator */,
 				FC348B432507369D00039E2E /* Products */,
+				549C1E29C31E3C9AD36CA352 /* Pods */,
+				7E311DDB2D8CC0057C418B4E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,9 +148,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FC348B562507369F00039E2E /* Build configuration list for PBXNativeTarget "MimGenerator" */;
 			buildPhases = (
+				EAE1A5611A5D6B66AE150217 /* [CP] Check Pods Manifest.lock */,
 				FC348B3E2507369D00039E2E /* Sources */,
 				FC348B3F2507369D00039E2E /* Frameworks */,
 				FC348B402507369D00039E2E /* Resources */,
+				8FA56AE313FD6E907A7517DB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -181,6 +208,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8FA56AE313FD6E907A7517DB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MimGenerator/Pods-MimGenerator-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MimGenerator/Pods-MimGenerator-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MimGenerator/Pods-MimGenerator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EAE1A5611A5D6B66AE150217 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MimGenerator-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FC348B3E2507369D00039E2E /* Sources */ = {
@@ -334,6 +403,7 @@
 		};
 		FC348B572507369F00039E2E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92DE38F636BCD5500869ED3A /* Pods-MimGenerator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -351,6 +421,7 @@
 		};
 		FC348B582507369F00039E2E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B501145ED084BA034F43C99A /* Pods-MimGenerator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
